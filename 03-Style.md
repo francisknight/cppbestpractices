@@ -25,33 +25,13 @@ C++ Standard Library (and other well-known C++ libraries like [Boost](http://www
 
 Name private data with a `m_` prefix to distinguish it from public data. `m_` stands for "member" data.
 
-## Distinguish Function Parameters
-
-The most important thing is consistency within your codebase; this is one possibility to help with consistency.
-
-Name function parameters with an `t_` prefix. `t_` can be thought of as "the", but the meaning is arbitrary. The point is to distinguish function parameters from other variables in scope while giving us a consistent naming strategy.
-
-By using `t_` for parameters and `m_` for member data, we can have consistency with both public members of structs and private members of classes.
-
-Any prefix or postfix can be chosen for your organization. This is just one example. *This suggestion is controversial, for a discussion about it see issue [#11](https://github.com/lefticus/cppbestpractices/issues/11).*
-
 ```cpp
-struct Size
-{
-  int width;
-  int height;
-
-  Size(int t_width, int t_height) : width(t_width), height(t_height) {}
-};
-
-// This version might make sense for thread safety or something,
-// but more to the point, sometimes we need to hide data, sometimes we don't.
 class PrivateSize
 {
   public:
     int width() const { return m_width; }
     int height() const { return m_height; }
-    PrivateSize(int t_width, int t_height) : m_width(t_width), m_height(t_height) {}
+    PrivateSize(int width, int height) : m_width(width), m_height(height) {}
 
   private:
     int m_width;
@@ -357,4 +337,3 @@ The Rule of Zero states that you do not provide any of the functions that the co
 The goal is to let the compiler provide optimal versions that are automatically maintained when more member variables are added.
 
 The [original article](http://flamingdangerzone.com/cxx11/rule-of-zero/) provides the background, while a [follow up article](https://turingtester.wordpress.com/2015/06/27/cs-rule-of-zero/) explains techniques for implementing nearly 100% of the time.
-

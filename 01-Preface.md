@@ -1,5 +1,6 @@
 # Preface
 
+### Preface to the original version by Jason Turner
 C++ Best Practices: A Forkable Coding Standards Document
 
 This document is meant to be a collaborative discussion of the best practices in C++. It complements books such as *Effective C++* (Meyers) and *C++ Coding Standards* (Alexandrescu, Sutter). We fill in some of the lower level details that they don't discuss and provide specific stylistic recommendations while also discussing how to ensure overall code quality.
