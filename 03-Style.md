@@ -275,15 +275,13 @@ In general, using `auto` will avoid most of these issues, but not all.
 
 Make sure you stick with the correct integer types and remain consistent with the C++ standard library. It might not warn on the platform you are currently using, but it probably will when you change platforms.
 
-## Use .hpp and .cpp for Your File Extensions
+## Use .h and .cpp for Your File Extensions
 
-Ultimately this is a matter of preference, but .hpp and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, Visual Studio only automatically recognizes .cpp and .cxx for C++ files, and Vim doesn't necessarily recognize .cc as a C++ file.
-
-One particularly large project ([OpenStudio](https://github.com/NREL/OpenStudio)) uses .hpp and .cpp for user-generated files and .hxx and .cxx for tool-generated files. Both are well recognized and having the distinction is helpful.
+Ultimately this is a matter of preference, but .h and .cpp are widely recognized by various editors and tools. So the choice is pragmatic. Specifically, Visual Studio only automatically recognizes .cpp and .cxx for C++ files, and Vim doesn't necessarily recognize .cc as a C++ file.
 
 ## Never Mix Tabs and Spaces
 
-Some editors like to indent with a mixture of tabs and spaces by default. This makes the code unreadable to anyone not using the exact same tab indentation settings. Configure your editor so this does not happen.
+Some editors like to indent with a mixture of tabs and spaces by default. This makes the code unreadable to anyone not using the exact same tab indentation settings. Configure your editor so this does not happen. Tabs with a width of four spaces is preferred for indentation.
 
 ## Never Put Code with Side Effects Inside an assert()
 
